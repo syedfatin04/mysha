@@ -101,9 +101,14 @@
   @apply bg-background/80 backdrop-blur-md border border-white/10;
 }
 
-.blue-wipe {
-  @apply fixed inset-0 z-50 bg-mysha-blue pointer-events-none;
-}
+  .blue-wipe {
+    @apply fixed inset-0 z-50 bg-mysha-blue pointer-events-none;
+  }
+
+  .text-outline-white {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  }
+
 
 /* Hide Next.js error overlay portal */
 nextjs-portal {
