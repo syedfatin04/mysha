@@ -31,56 +31,71 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border py-4" : "bg-transparent py-6"
+        scrolled 
+          ? "bg-primary/95 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl" 
+          : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2 group">
+        <Link href="/" className="flex items-center space-x-3 group">
           <motion.div
-            whileHover={{ rotate: [0, -10, 10, 0] }}
-            className="bg-primary p-2 rounded-lg"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white p-2 rounded-xl shadow-lg"
           >
-            <Truck className="w-6 h-6 text-primary-foreground" />
+            <Truck className="w-6 h-6 text-primary" />
           </motion.div>
-            <div className="flex flex-col">
-              <span className="font-display text-xl font-bold tracking-tight leading-none">MYSHA</span>
-              <span className="text-[10px] tracking-wider uppercase font-medium opacity-70">Transport</span>
-            </div>
-          </Link>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="relative text-sm font-medium tracking-wide uppercase group overflow-hidden"
-              >
-                <span className={`block transition-transform duration-300 ${pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
-                  {link.name}
-                </span>
-                <span className={`absolute top-full left-0 block transition-transform duration-300 text-primary ${pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
-                  {link.name}
-                </span>
-                {pathname === link.href && (
-                  <motion.div
-                    layoutId="nav-indicator"
-                    className="absolute bottom-0 left-0 w-full h-[2px] bg-primary"
-                  />
-                )}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:scale-105 transition-transform"
-            >
-              Get a Quote
-            </Link>
+          <div className="flex flex-col">
+            <span className="font-display text-2xl font-black tracking-tighter leading-none text-white">
+              MYSHA
+            </span>
+            <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-white/70">
+              Transport
+            </span>
           </div>
+        </Link>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center space-x-10">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="relative text-xs font-bold tracking-[0.1em] uppercase group overflow-hidden"
+            >
+              <div className="relative overflow-hidden">
+                <span className={`block transition-transform duration-500 ease-out text-white/90 ${pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
+                  {link.name}
+                </span>
+                <span className={`absolute top-full left-0 block transition-transform duration-500 ease-out text-white ${pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
+                  {link.name}
+                </span>
+              </div>
+              {pathname === link.href && (
+                <motion.div
+                  layoutId="nav-indicator"
+                  className="absolute -bottom-1 left-0 w-full h-[2px] bg-white rounded-full"
+                />
+              )}
+            </Link>
+          ))}
+          <Link
+            href="/contact"
+            className="relative group overflow-hidden bg-white text-primary px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all"
+          >
+            <span className="relative z-10">Get a Quote</span>
+            <motion.div 
+              className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+            />
+          </Link>
+        </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        <button 
+          className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors" 
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>
 
@@ -88,24 +103,37 @@ export function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-background border-b border-border md:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="absolute top-full left-0 w-full bg-primary border-t border-white/10 md:hidden overflow-hidden shadow-2xl"
           >
-            <div className="flex flex-col p-6 space-y-4">
-              {navLinks.map((link) => (
-                <Link
+            <div className="flex flex-col p-8 space-y-6">
+              {navLinks.map((link, i) => (
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-lg font-bold uppercase tracking-widest ${
-                    pathname === link.href ? "text-primary" : ""
-                  }`}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: i * 0.1 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-2xl font-black uppercase tracking-tighter ${
+                      pathname === link.href ? "text-white" : "text-white/50"
+                    } hover:text-white transition-colors`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="w-full text-center bg-white text-primary py-4 rounded-xl font-black uppercase tracking-widest"
+              >
+                Get a Quote
+              </Link>
             </div>
           </motion.div>
         )}

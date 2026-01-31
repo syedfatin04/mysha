@@ -7,17 +7,21 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Logo & About */}
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="bg-white p-2 rounded-lg">
-                <Truck className="w-6 h-6 text-primary" />
-              </div>
+            <div className="space-y-6">
+              <Link href="/" className="flex items-center space-x-3 group">
+                <div className="bg-white p-2 rounded-xl shadow-lg transition-transform group-hover:scale-110 group-hover:rotate-6">
+                  <Truck className="w-6 h-6 text-primary" />
+                </div>
                 <div className="flex flex-col">
-                  <span className="font-display text-xl font-bold tracking-tight leading-none">MYSHA</span>
-                  <span className="text-[10px] tracking-wider uppercase font-medium opacity-70">Transport</span>
+                  <span className="font-display text-2xl font-black tracking-tighter leading-none text-white">
+                    MYSHA
+                  </span>
+                  <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-white/50">
+                    Transport
+                  </span>
                 </div>
               </Link>
-              <p className="text-sm opacity-70 leading-relaxed max-w-xs">
+              <p className="text-sm text-white/60 leading-relaxed max-w-xs">
                 Delivering safe, efficient, and technology-driven transportation services across the UAE & GCC since 2014.
               </p>
             </div>
