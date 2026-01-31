@@ -32,10 +32,10 @@ export function PageHero({ title, subtitle, backgroundImage }: PageHeroProps) {
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black text-white mb-10 leading-[0.85] tracking-tighter uppercase">
-            <TextReveal text={title} />
-          </h1>
+          <div className="max-w-5xl">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black text-white mb-10 leading-[0.85] tracking-tight uppercase">
+              <TextReveal text={title} />
+            </h1>
           {subtitle && (
             <motion.p
               initial={{ opacity: 0, y: 20 }}

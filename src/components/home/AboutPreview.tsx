@@ -24,57 +24,57 @@ export function AboutPreview() {
               
               <div className="absolute bottom-10 left-10 right-10 p-10 backdrop-blur-xl bg-white/10 rounded-3xl border border-white/20 shadow-2xl">
                 <div className="flex items-center gap-6 mb-4">
-                  <div className="text-white">
-                    <p className="text-5xl font-black font-display">2014</p>
-                    <p className="text-xs uppercase tracking-[0.3em] font-bold opacity-60">Established</p>
+                    <div className="text-white">
+                      <p className="text-5xl font-black font-display">2014</p>
+                      <p className="text-xs uppercase tracking-wider font-bold opacity-60">Established</p>
+                    </div>
+                    <div className="w-[1px] h-12 bg-white/20" />
+                    <div className="text-white">
+                      <p className="text-5xl font-black font-display">9+</p>
+                      <p className="text-xs uppercase tracking-wider font-bold opacity-60">Years Exp</p>
+                    </div>
                   </div>
-                  <div className="w-[1px] h-12 bg-white/20" />
-                  <div className="text-white">
-                    <p className="text-5xl font-black font-display">9+</p>
-                    <p className="text-xs uppercase tracking-[0.3em] font-bold opacity-60">Years Exp</p>
-                  </div>
+                  <p className="text-white/90 text-lg font-medium leading-relaxed">
+                    "Building the future of GCC logistics through unwavering reliability and safety."
+                  </p>
                 </div>
-                <p className="text-white/90 text-lg font-medium leading-relaxed">
-                  "Building the future of GCC logistics through unwavering reliability and safety."
-                </p>
               </div>
-            </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-mysha-blue/5 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-mysha-blue/10 rounded-full blur-3xl -z-10" />
-          </ScrollReveal>
+              {/* Decorative Elements */}
+              <div className="absolute -top-12 -right-12 w-48 h-48 bg-mysha-blue/5 rounded-full blur-3xl -z-10" />
+              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-mysha-blue/10 rounded-full blur-3xl -z-10" />
+            </ScrollReveal>
 
-          <div className="relative">
-            <ScrollReveal>
-              <div className="inline-flex items-center gap-3 mb-8">
-                <div className="w-12 h-[2px] bg-mysha-blue" />
-                <span className="text-mysha-blue font-bold uppercase tracking-[0.4em] text-xs">About Our Company</span>
-              </div>
-              
-              <h2 className="text-5xl md:text-7xl font-display font-black text-mysha-blue mb-10 leading-[1.1]">
-                Pioneering <span className="text-outline-blue text-transparent">Logistics</span> Excellence
-              </h2>
-              
-              <div className="space-y-8 text-mysha-blue/70 text-xl leading-relaxed mb-12">
-                <p className="font-medium text-mysha-blue/90">
-                  Mysha Transport has been a cornerstone of dependable transportation and logistics solutions across the UAE and GCC since 2014.
-                </p>
-                <p>
-                  With a powerhouse fleet of over 105 vehicles and a team of veteran drivers, we handle every shipment with surgical precision. Our cross-border expertise ensures that your cargo moves seamlessly across Saudi Arabia, Kuwait, Qatar, Bahrain, and Oman.
-                </p>
-                <p>
-                  We don't just move goods; we move businesses forward by integrating cutting-edge GPS tracking with rigorous safety standards and localized route intelligence.
-                </p>
-              </div>
-              
-              <Link
-                href="/about"
-                className="group inline-flex items-center gap-4 bg-mysha-blue text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest hover:bg-mysha-blue/90 transition-all shadow-xl hover:shadow-mysha-blue/20 active:scale-95"
-              >
-                <span>Learn More About Us</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </Link>
+            <div className="relative">
+              <ScrollReveal>
+                <div className="inline-flex items-center gap-3 mb-8">
+                  <div className="w-12 h-[2px] bg-mysha-blue" />
+                  <span className="text-mysha-blue font-bold uppercase tracking-widest text-xs">About Our Company</span>
+                </div>
+                
+                <h2 className="text-5xl md:text-7xl font-display font-black text-mysha-blue mb-10 leading-[1.1]">
+                  Pioneering <span className="text-outline-blue text-transparent">Logistics</span> Excellence
+                </h2>
+                
+                <div className="space-y-8 text-mysha-blue/70 text-xl leading-relaxed mb-12">
+                  <p className="font-medium text-mysha-blue/90">
+                    Mysha Transport has been a cornerstone of dependable transportation and logistics solutions across the UAE and GCC since 2014.
+                  </p>
+                  <p>
+                    With a powerhouse fleet of over 105 vehicles and a team of veteran drivers, we handle every shipment with surgical precision. Our cross-border expertise ensures that your cargo moves seamlessly across Saudi Arabia, Kuwait, Qatar, Bahrain, and Oman.
+                  </p>
+                  <p>
+                    We don't just move goods; we move businesses forward by integrating cutting-edge GPS tracking with rigorous safety standards and localized route intelligence.
+                  </p>
+                </div>
+                
+                <Link
+                  href="/about"
+                  className="group inline-flex items-center gap-4 bg-mysha-blue text-white px-10 py-5 rounded-full font-bold uppercase tracking-wider hover:bg-mysha-blue/90 transition-all shadow-xl hover:shadow-mysha-blue/20 active:scale-95"
+                >
+                  <span>Learn More About Us</span>
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </Link>
             </ScrollReveal>
           </div>
         </div>

@@ -118,17 +118,17 @@ export function Hero() {
 
       <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 mb-8 px-6 py-3 border border-white/10 rounded-full bg-white/5 backdrop-blur-md"
-          >
-            <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            <span className="text-white/80 text-[10px] font-bold uppercase tracking-[0.5em]">
-              The Gold Standard of GCC Logistics
-            </span>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 mb-8 px-6 py-3 border border-white/10 rounded-full bg-white/5 backdrop-blur-md"
+            >
+              <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+              <span className="text-white/80 text-[10px] font-bold uppercase tracking-wider">
+                The Gold Standard of GCC Logistics
+              </span>
+            </motion.div>
 
           <motion.h1 
             style={{ scale }}
@@ -163,25 +163,25 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 1.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-10"
           >
-            <Link
-              href="/contact"
-              className="group relative px-14 py-6 bg-white text-mysha-blue font-bold uppercase tracking-widest rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(255,255,255,0.1)]"
-            >
-              <div className="absolute inset-0 bg-mysha-blue/5 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
-              <span className="relative z-10 flex items-center gap-2 text-lg">
-                Get a Quote <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-            
-            <Link
-              href="/services"
-              className="group flex items-center gap-4 text-white/80 hover:text-white font-bold uppercase tracking-widest transition-all duration-300"
-            >
-              <span className="border-b-2 border-white/20 group-hover:border-white pb-1 transition-all">Explore Services</span>
-              <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white/10 group-hover:border-white transition-all">
-                <ChevronRight className="w-6 h-6" />
-              </div>
-            </Link>
+              <Link
+                href="/contact"
+                className="group relative px-14 py-6 bg-white text-mysha-blue font-bold uppercase tracking-wider rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(255,255,255,0.1)]"
+              >
+                <div className="absolute inset-0 bg-mysha-blue/5 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+                <span className="relative z-10 flex items-center gap-2 text-lg">
+                  Get a Quote <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+              
+              <Link
+                href="/services"
+                className="group flex items-center gap-4 text-white/80 hover:text-white font-bold uppercase tracking-wider transition-all duration-300"
+              >
+                <span className="border-b-2 border-white/20 group-hover:border-white pb-1 transition-all">Explore Services</span>
+                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white/10 group-hover:border-white transition-all">
+                  <ChevronRight className="w-6 h-6" />
+                </div>
+              </Link>
           </motion.div>
         </div>
       </div>

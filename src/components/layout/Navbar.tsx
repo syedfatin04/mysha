@@ -42,41 +42,41 @@ export function Navbar() {
           >
             <Truck className="w-6 h-6 text-primary-foreground" />
           </motion.div>
-          <div className="flex flex-col">
-            <span className="font-display text-xl font-bold tracking-tighter leading-none">MYSHA</span>
-            <span className="text-[10px] tracking-[0.2em] uppercase font-medium opacity-70">Transport</span>
-          </div>
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="relative text-sm font-medium tracking-wide uppercase group overflow-hidden"
-            >
-              <span className={`block transition-transform duration-300 ${pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
-                {link.name}
-              </span>
-              <span className={`absolute top-full left-0 block transition-transform duration-300 text-primary ${pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
-                {link.name}
-              </span>
-              {pathname === link.href && (
-                <motion.div
-                  layoutId="nav-indicator"
-                  className="absolute bottom-0 left-0 w-full h-[2px] bg-primary"
-                />
-              )}
-            </Link>
-          ))}
-          <Link
-            href="/contact"
-            className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform"
-          >
-            Get a Quote
+            <div className="flex flex-col">
+              <span className="font-display text-xl font-bold tracking-tight leading-none">MYSHA</span>
+              <span className="text-[10px] tracking-wider uppercase font-medium opacity-70">Transport</span>
+            </div>
           </Link>
-        </div>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="relative text-sm font-medium tracking-wide uppercase group overflow-hidden"
+              >
+                <span className={`block transition-transform duration-300 ${pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
+                  {link.name}
+                </span>
+                <span className={`absolute top-full left-0 block transition-transform duration-300 text-primary ${pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
+                  {link.name}
+                </span>
+                {pathname === link.href && (
+                  <motion.div
+                    layoutId="nav-indicator"
+                    className="absolute bottom-0 left-0 w-full h-[2px] bg-primary"
+                  />
+                )}
+              </Link>
+            ))}
+            <Link
+              href="/contact"
+              className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:scale-105 transition-transform"
+            >
+              Get a Quote
+            </Link>
+          </div>
 
         {/* Mobile Toggle */}
         <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>

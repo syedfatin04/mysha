@@ -60,14 +60,14 @@ export function Stats() {
           {stats.map((stat, index) => (
             <ScrollReveal key={stat.label} delay={index * 0.1}>
               <div className="text-center">
-                <div className="text-5xl md:text-7xl font-display font-bold text-white mb-2">
-                  <Counter value={stat.value} suffix={stat.suffix} />
+                  <div className="text-5xl md:text-7xl font-display font-bold text-white mb-2">
+                    <Counter value={stat.value} suffix={stat.suffix} />
+                  </div>
+                  <div className="text-white/50 text-xs md:text-sm font-bold uppercase tracking-wider">
+                    {stat.label}
+                  </div>
                 </div>
-                <div className="text-white/50 text-xs md:text-sm font-bold uppercase tracking-widest">
-                  {stat.label}
-                </div>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
           ))}
         </div>
       </div>

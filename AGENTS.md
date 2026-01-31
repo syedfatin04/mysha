@@ -8,6 +8,7 @@ MYSHA TRANSPORT is a premium corporate logistics and transportation website for 
 - **Icons:** Lucide React
 - **Components:** Radix UI / Shadcn UI
 - **Language:** TypeScript
+- **Fonts:** Plus Jakarta Sans (Display), Inter (Sans)
 
 ## Architecture
 - `src/app/`: Multi-page routing (Home, About, Services, Fleet, Clients, Contact)
@@ -20,12 +21,14 @@ MYSHA TRANSPORT is a premium corporate logistics and transportation website for 
 - **Vibe:** Industrial, Smooth, Confident, Premium, Expensive
 - **Animations:** Mandatory global motion (scroll, hover, cursor, transitions)
 - **Layout:** Multi-page website (strictly NOT one-page)
+- **Typography:** Professional, non-stretched fonts. Avoid extreme tracking/letter-spacing.
 
 ## Project Guidelines
 - Use named exports for components.
 - Minimize `use client` by wrapping interactive parts.
 - Ensure all sections have scroll reveals and motion depth.
 - Follow a strong typographic hierarchy with bold sans-serif fonts.
+- Maintain balanced letter-spacing (tracking); avoid values exceeding `tracking-wider` unless strictly necessary for small caps.
 
 ## Common Patterns
 - **Page Transitions:** Blue to white cinematic wipes.
