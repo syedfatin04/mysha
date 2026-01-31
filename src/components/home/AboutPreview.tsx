@@ -5,15 +5,20 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import Image from "next/image";
+import { Magnetic } from "@/components/motion/Magnetic";
 
 export function AboutPreview() {
   return (
     <section className="py-32 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <ScrollReveal direction="right" className="relative">
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden group shadow-2xl">
+            <ScrollReveal direction="right" className="relative group/parallax">
+              <motion.div 
+                style={{ y: 0 }}
+                whileInView={{ y: [20, -20] }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl"
+              >
               <Image
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2070"
                 alt="Mysha Transport Operations"
@@ -38,7 +43,7 @@ export function AboutPreview() {
                     "Building the future of GCC logistics through unwavering reliability and safety."
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Decorative Elements */}
               <div className="absolute -top-12 -right-12 w-48 h-48 bg-mysha-blue/5 rounded-full blur-3xl -z-10" />
@@ -68,13 +73,15 @@ export function AboutPreview() {
                   </p>
                 </div>
                 
-                <Link
-                  href="/about"
-                  className="group inline-flex items-center gap-4 bg-mysha-blue text-white px-10 py-5 rounded-full font-bold uppercase tracking-wider hover:bg-mysha-blue/90 transition-all shadow-xl hover:shadow-mysha-blue/20 active:scale-95"
-                >
-                  <span>Learn More About Us</span>
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                  <Magnetic>
+                    <Link
+                      href="/about"
+                      className="group inline-flex items-center gap-4 bg-mysha-blue text-white px-10 py-5 rounded-full font-bold uppercase tracking-wider hover:bg-mysha-blue/90 transition-all shadow-xl hover:shadow-mysha-blue/20 active:scale-95"
+                    >
+                      <span>Learn More About Us</span>
+                      <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Magnetic>
             </ScrollReveal>
           </div>
         </div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Truck } from "lucide-react";
+import { Magnetic } from "@/components/motion/Magnetic";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -37,23 +38,25 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-3 group">
-          <motion.div
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white p-2 rounded-xl shadow-lg"
-          >
-            <Truck className="w-6 h-6 text-primary" />
-          </motion.div>
-          <div className="flex flex-col">
-            <span className="font-display text-2xl font-black tracking-tighter leading-none text-white">
-              MYSHA
-            </span>
-            <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-white/70">
-              Transport
-            </span>
-          </div>
-        </Link>
+        <Magnetic>
+          <Link href="/" className="flex items-center space-x-3 group">
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white p-2 rounded-xl shadow-lg"
+            >
+              <Truck className="w-6 h-6 text-primary" />
+            </motion.div>
+            <div className="flex flex-col">
+              <span className="font-display text-2xl font-black tracking-tighter leading-none text-white">
+                MYSHA
+              </span>
+              <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-white/70">
+                Transport
+              </span>
+            </div>
+          </Link>
+        </Magnetic>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-10">
@@ -79,15 +82,17 @@ export function Navbar() {
               )}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="relative group overflow-hidden bg-white text-primary px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all"
-          >
-            <span className="relative z-10">Get a Quote</span>
-            <motion.div 
-              className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-            />
-          </Link>
+          <Magnetic>
+            <Link
+              href="/contact"
+              className="relative group overflow-hidden bg-white text-primary px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all"
+            >
+              <span className="relative z-10">Get a Quote</span>
+              <motion.div 
+                className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+              />
+            </Link>
+          </Magnetic>
         </div>
 
         {/* Mobile Toggle */}

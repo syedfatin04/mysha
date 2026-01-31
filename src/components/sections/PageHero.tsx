@@ -12,7 +12,7 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, backgroundImage }: PageHeroProps) {
   return (
-    <section className="relative pt-60 pb-32 bg-mysha-blue overflow-hidden">
+    <section className="relative pt-44 pb-20 bg-mysha-blue overflow-hidden">
       {/* Background Image with Overlay */}
       {backgroundImage && (
         <div className="absolute inset-0 z-0">
@@ -33,7 +33,7 @@ export function PageHero({ title, subtitle, backgroundImage }: PageHeroProps) {
       
       <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black text-white mb-10 leading-[0.85] tracking-tight uppercase">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white mb-8 leading-[0.9] tracking-tight uppercase">
               <TextReveal text={title} />
             </h1>
           {subtitle && (
@@ -41,7 +41,7 @@ export function PageHero({ title, subtitle, backgroundImage }: PageHeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-white/60 text-2xl md:text-3xl max-w-3xl font-light leading-relaxed"
+                className="text-white/60 text-xl md:text-2xl max-w-3xl font-light leading-relaxed"
             >
               {subtitle}
             </motion.p>
