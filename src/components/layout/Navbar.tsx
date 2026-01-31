@@ -82,17 +82,17 @@ export function Navbar() {
               )}
             </Link>
           ))}
-          <Magnetic>
-            <Link
-              href="/contact"
-              className="relative group overflow-hidden bg-white text-primary px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all"
-            >
-              <span className="relative z-10">Get a Quote</span>
-              <motion.div 
-                className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-              />
-            </Link>
-          </Magnetic>
+            <Magnetic>
+              <Link
+                href="/contact"
+                className="relative group overflow-hidden bg-white text-primary px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all"
+              >
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Get a Quote</span>
+                <motion.div 
+                  className="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                />
+              </Link>
+            </Magnetic>
         </div>
 
         {/* Mobile Toggle */}

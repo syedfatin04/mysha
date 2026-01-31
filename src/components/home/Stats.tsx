@@ -42,28 +42,21 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export function Stats() {
   return (
-    <section className="py-24 bg-mysha-blue relative overflow-hidden">
+    <section className="py-32 bg-[#050A15] relative overflow-hidden">
       {/* Subtle Background Motion */}
-      <div className="absolute inset-0 opacity-10">
-        <motion.div
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-[100px]"
-        />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
           {stats.map((stat, index) => (
             <ScrollReveal key={stat.label} delay={index * 0.1}>
-              <div className="text-center">
-                  <div className="text-5xl md:text-7xl font-display font-bold text-white mb-2">
+              <div className={`text-center py-12 ${index !== stats.length - 1 ? "md:border-r border-white/5" : ""}`}>
+                  <div className="text-5xl md:text-7xl font-display font-black text-white mb-4 tracking-tighter">
                     <Counter value={stat.value} suffix={stat.suffix} />
                   </div>
-                  <div className="text-white/50 text-xs md:text-sm font-bold uppercase tracking-wider">
+                  <div className="text-white/30 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] max-w-[150px] mx-auto leading-relaxed">
                     {stat.label}
                   </div>
                 </div>

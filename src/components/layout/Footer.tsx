@@ -1,92 +1,161 @@
+"use client";
+
 import Link from "next/link";
 import { Truck, Mail, Phone, MapPin, Instagram, MessageSquare } from "lucide-react";
+import { motion } from "framer-motion";
+import { Magnetic } from "@/components/motion/Magnetic";
+
+const footerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5 }
+  }
+};
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground py-20">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer className="bg-primary text-primary-foreground pt-32 pb-12 overflow-hidden relative">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/[0.01] rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+
+      <motion.div 
+        variants={footerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="container mx-auto px-6 relative z-10"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
           {/* Logo & About */}
-            <div className="space-y-6">
-              <Link href="/" className="flex items-center space-x-3 group">
-                <div className="bg-white p-2 rounded-xl shadow-lg transition-transform group-hover:scale-110 group-hover:rotate-6">
-                  <Truck className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-display text-2xl font-black tracking-tighter leading-none text-white">
-                    MYSHA
-                  </span>
-                  <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-white/50">
-                    Transport
-                  </span>
-                </div>
-              </Link>
-              <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-                Delivering safe, efficient, and technology-driven transportation services across the UAE & GCC since 2014.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div className="space-y-6">
-              <h4 className="font-display text-lg font-bold uppercase tracking-wider">Quick Links</h4>
-              <ul className="space-y-3">
-                <li><Link href="/" className="text-sm opacity-70 hover:opacity-100 transition-opacity">Home</Link></li>
-                <li><Link href="/about" className="text-sm opacity-70 hover:opacity-100 transition-opacity">About Us</Link></li>
-                <li><Link href="/services" className="text-sm opacity-70 hover:opacity-100 transition-opacity">Services</Link></li>
-                <li><Link href="/fleet" className="text-sm opacity-70 hover:opacity-100 transition-opacity">Fleet</Link></li>
-                <li><Link href="/contact" className="text-sm opacity-70 hover:opacity-100 transition-opacity">Contact</Link></li>
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div className="space-y-6">
-              <h4 className="font-display text-lg font-bold uppercase tracking-wider">Services</h4>
-              <ul className="space-y-3">
-                <li className="text-sm opacity-70">Local UAE Transport</li>
-                <li className="text-sm opacity-70">Cross-Border GCC</li>
-                <li className="text-sm opacity-70">Heavy & Oversized</li>
-                <li className="text-sm opacity-70">GPS Tracking</li>
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <h4 className="font-display text-lg font-bold uppercase tracking-wider">Contact Info</h4>
-              <ul className="space-y-4">
-                <li className="flex items-start space-x-3">
-                  <Phone className="w-5 h-5 opacity-70 mt-1" />
-                  <span className="text-sm opacity-70">+971 55 779 6387</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <Mail className="w-5 h-5 opacity-70 mt-1" />
-                  <span className="text-sm opacity-70">info@myshatransport.com</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 opacity-70 mt-1" />
-                  <span className="text-sm opacity-70">Dubai, United Arab Emirates</span>
-                </li>
-              </ul>
-              <div className="flex space-x-4 pt-4">
-                <Link href="#" className="p-2 border border-white/20 rounded-full hover:bg-white/10 transition-colors">
-                  <Instagram className="w-4 h-4" />
-                </Link>
-                <Link href="https://wa.me/971557796387" className="p-2 border border-white/20 rounded-full hover:bg-white/10 transition-colors">
-                  <MessageSquare className="w-4 h-4" />
-                </Link>
+          <motion.div variants={itemVariants} className="space-y-8">
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="bg-white p-2.5 rounded-2xl shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-[10deg]">
+                <Truck className="w-7 h-7 text-primary" />
               </div>
-            </div>
-          </div>
-
-          <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs opacity-50 uppercase tracking-wider">
-              © {new Date().getFullYear()} MYSHA TRANSPORT. ALL RIGHTS RESERVED.
+              <div className="flex flex-col">
+                <span className="font-display text-3xl font-black tracking-tighter leading-none text-white">
+                  MYSHA
+                </span>
+                <span className="text-[11px] tracking-[0.3em] uppercase font-bold text-white/40">
+                  Transport
+                </span>
+              </div>
+            </Link>
+            <p className="text-base text-white/50 leading-relaxed max-w-xs">
+              Pioneering the future of logistics in the UAE and GCC through innovation, safety, and unwavering commitment to excellence.
             </p>
-            <div className="flex space-x-6">
-              <Link href="#" className="text-xs opacity-50 hover:opacity-100 uppercase tracking-wider">Privacy Policy</Link>
-              <Link href="#" className="text-xs opacity-50 hover:opacity-100 uppercase tracking-wider">Terms & Conditions</Link>
+            <div className="flex space-x-5 pt-2">
+              {[
+                { icon: Instagram, href: "#" },
+                { icon: MessageSquare, href: "https://wa.me/971557796387" }
+              ].map((social, i) => (
+                <Magnetic key={i}>
+                  <Link 
+                    href={social.href}
+                    className="w-12 h-12 flex items-center justify-center border border-white/10 rounded-2xl hover:bg-white hover:text-primary transition-all duration-500"
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </Link>
+                </Magnetic>
+              ))}
             </div>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div variants={itemVariants} className="space-y-8">
+            <h4 className="font-display text-lg font-black uppercase tracking-widest text-white">Navigation</h4>
+            <ul className="space-y-4">
+              {["Home", "About", "Services", "Fleet", "Contact"].map((link) => (
+                <li key={link}>
+                  <Link 
+                    href={link === "Home" ? "/" : `/${link.toLowerCase()}`} 
+                    className="text-white/50 hover:text-white transition-all duration-300 flex items-center group"
+                  >
+                    <span className="w-0 group-hover:w-4 h-[1px] bg-white mr-0 group-hover:mr-3 transition-all duration-300" />
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div variants={itemVariants} className="space-y-8">
+            <h4 className="font-display text-lg font-black uppercase tracking-widest text-white">Expertise</h4>
+            <ul className="space-y-4">
+              {[
+                "Local UAE Logistics",
+                "Cross-Border GCC",
+                "Heavy Load Solutions",
+                "Real-time Tracking"
+              ].map((service) => (
+                <li key={service} className="text-white/50 flex items-center group cursor-default">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/20 mr-3 group-hover:bg-white transition-colors" />
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div variants={itemVariants} className="space-y-8">
+            <h4 className="font-display text-lg font-black uppercase tracking-widest text-white">Contact</h4>
+            <ul className="space-y-6">
+              <li className="flex items-start space-x-4 group cursor-pointer">
+                <div className="w-10 h-10 border border-white/10 rounded-xl flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-300">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-white/30 mb-1">Call Us</span>
+                  <span className="text-white/80 font-bold">+971 55 779 6387</span>
+                </div>
+              </li>
+              <li className="flex items-start space-x-4 group cursor-pointer">
+                <div className="w-10 h-10 border border-white/10 rounded-xl flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-300">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-white/30 mb-1">Email Us</span>
+                  <span className="text-white/80 font-bold">info@myshatransport.com</span>
+                </div>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        <motion.div 
+          variants={itemVariants}
+          className="mt-32 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8"
+        >
+          <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.3em]">
+            © {new Date().getFullYear()} MYSHA TRANSPORT. CRAFTED FOR EXCELLENCE.
+          </p>
+          <div className="flex space-x-12">
+            {["Privacy Policy", "Terms & Conditions"].map((item) => (
+              <Link key={item} href="#" className="text-[10px] text-white/30 hover:text-white font-bold uppercase tracking-[0.2em] transition-colors">
+                {item}
+              </Link>
+            ))}
           </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 }
+

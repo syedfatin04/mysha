@@ -12,23 +12,35 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, backgroundImage }: PageHeroProps) {
   return (
-    <section className="relative pt-44 pb-20 bg-mysha-blue overflow-hidden">
+    <section className="relative pt-40 pb-16 bg-mysha-blue overflow-hidden min-h-[40vh] flex items-center">
       {/* Background Image with Overlay */}
       {backgroundImage && (
-        <div className="absolute inset-0 z-0">
+        <motion.div 
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.3 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 z-0"
+        >
           <Image
             src={backgroundImage}
             alt={title}
             fill
-            className="object-cover opacity-30 mix-blend-luminosity"
+            className="object-cover mix-blend-luminosity"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-mysha-blue/90 via-mysha-blue/70 to-mysha-blue" />
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-mysha-blue/90 via-mysha-blue/60 to-mysha-blue" />
+        </motion.div>
       )}
 
       <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-0 right-0 w-[500px] h-[500px] bg-white rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" 
+        />
       </div>
       
       <div className="container mx-auto px-6 relative z-10">

@@ -5,6 +5,7 @@ import { VisualEditsMessenger } from "orchids-visual-edits";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/motion/PageTransition";
+import { WhatsAppWidget } from "@/components/ui/WhatsAppWidget";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,13 +32,14 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} antialiased selection:bg-primary selection:text-primary-foreground`}
       >
-        <Navbar />
-        <main>
-          <PageTransition>
-            {children}
-          </PageTransition>
-        </main>
-        <Footer />
+          <Navbar />
+          <main>
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </main>
+          <WhatsAppWidget />
+          <Footer />
         <VisualEditsMessenger />
       </body>
     </html>
