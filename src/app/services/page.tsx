@@ -54,11 +54,13 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col">
-      <PageHero 
-        title="Comprehensive Logistics Solutions" 
-        subtitle="Moving your business forward with precision and speed across the GCC."
-      />
+      <div className="flex flex-col">
+        <PageHero 
+          title="Comprehensive Logistics Solutions" 
+          subtitle="Moving your business forward with precision and speed across the GCC."
+          backgroundImage="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2070"
+        />
+
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">

@@ -9,10 +9,12 @@ import { CheckCircle2 } from "lucide-react";
 export default function AboutPage() {
   return (
     <div className="flex flex-col">
-      <PageHero 
-        title="Built on trust. Driven by reliability. Powered by experience." 
-        subtitle="Establishing excellence in GCC logistics since 2014."
-      />
+        <PageHero 
+          title="Built on trust. Driven by reliability. Powered by experience." 
+          subtitle="Establishing excellence in GCC logistics since 2014."
+          backgroundImage="https://images.unsplash.com/photo-1570675866104-1296c0ca322e?auto=format&fit=crop&q=80&w=2070"
+        />
+
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
