@@ -41,7 +41,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(glb|gltf))",
+      "source": "/(.*\\\\.(glb|gltf))",
       "headers": [
         {
           "key": "Content-Type",
