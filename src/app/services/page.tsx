@@ -90,16 +90,15 @@ export default function ServicesPage() {
 
   useEffect(() => {
     setIsLoaded(true);
-    
-    // Generate 3D particles
-    setParticles([...Array(30)].map((_, i) => ({
+    // Generate fewer 3D particles for better performance
+    setParticles([...Array(15)].map((_, i) => ({
       id: i,
       x: Math.random() * 100 - 50,
       y: Math.random() * 100 - 50,
       z: Math.random() * 100 - 50,
-      size: Math.random() * 3 + 1,
-      opacity: Math.random() * 0.6 + 0.2,
-      duration: Math.random() * 15 + 10,
+      size: Math.random() * 2 + 1,
+      opacity: Math.random() * 0.4 + 0.1,
+      duration: Math.random() * 20 + 15,
       delay: Math.random() * 10
     })));
 
@@ -305,20 +304,20 @@ export default function ServicesPage() {
                           scale: hoveredStat === stat.label ? 1.2 : 1
                         }}
                         transition={{ duration: 0.6 }}
-                        className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-white/20 to-white/10 flex items-center justify-center"
+                        className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-r from-white/20 to-white/10 flex items-center justify-center"
                       >
-                        <stat.icon className="w-8 h-8 text-white" />
+                        <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                       </motion.div>
                       <motion.div
                         animate={{ 
                           scale: hoveredStat === stat.label ? 1.1 : 1,
                           textShadow: hoveredStat === stat.label ? "0 0 20px rgba(255,255,255,0.5)" : "none"
                         }}
-                        className="text-4xl md:text-5xl font-black text-white mb-2"
+                        className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-2"
                       >
                         {stat.value}
                       </motion.div>
-                      <div className="text-sm text-white/60 uppercase tracking-wider">{stat.label}</div>
+                      <div className="text-xs sm:text-sm text-white/60 uppercase tracking-wider">{stat.label}</div>
                     </div>
                     
                     {/* 3D Glow Effect */}
@@ -342,11 +341,11 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Section with Globe */}
-      <section className="py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
           {/* Enhanced 3D Animated Blue Card Container */}
           <motion.div 
-            className="bg-primary rounded-3xl p-12 lg:p-16 text-white relative overflow-hidden"
+            className="bg-primary rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -413,7 +412,7 @@ export default function ServicesPage() {
                   }}
                 >
                   <motion.h2 
-                    className="text-4xl md:text-6xl font-display font-black text-white mb-6"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black text-white mb-4 sm:mb-6"
                     animate={{
                       textShadow: [
                         "0 0 20px rgba(255,255,255,0.5)",
@@ -430,7 +429,7 @@ export default function ServicesPage() {
                     Our Premium Services
                   </motion.h2>
                   <motion.p 
-                    className="text-xl text-white/70 max-w-3xl mx-auto"
+                    className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto px-4"
                     animate={{
                       y: [0, -5, 0]
                     }}
@@ -447,7 +446,7 @@ export default function ServicesPage() {
 
               {/* 3D Services Grid with Globe in Center */}
               <motion.div 
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center"
                 initial={{ opacity: 0, rotateX: 15 }}
                 whileInView={{ opacity: 1, rotateX: 0 }}
                 transition={{ duration: 1, delay: 0.4 }}
@@ -456,28 +455,28 @@ export default function ServicesPage() {
                 }}
               >
                 {/* Left Side Services */}
-                <div className="lg:col-span-4 space-y-6">
+                <div className="lg:col-span-4 space-y-4 lg:space-y-6">
                   {services.slice(0, 3).map((service, index) => (
                     <ScrollReveal key={service.title} delay={index * 0.1}>
-                      <div className="group bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <div className="flex items-start gap-4">
+                      <div className="group bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                        <div className="flex items-start gap-3 sm:gap-4">
                           <motion.div 
-                            className="w-14 h-14 bg-gradient-to-br from-mysha-blue to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0"
+                            className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-mysha-blue to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0"
                             whileHover={{
                               rotate: [0, 360],
                               scale: 1.1
                             }}
                             transition={{ duration: 0.6 }}
                           >
-                            <service.icon className="w-7 h-7 text-white" />
+                            <service.icon className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
                           </motion.div>
                           <div className="flex-1">
-                            <div className="flex items-center gap-3 mb-3">
-                              <h3 className="text-xl font-bold text-mysha-blue">
+                            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                              <h3 className="text-lg sm:text-xl font-bold text-mysha-blue">
                                 {service.title}
                               </h3>
                               <motion.span 
-                                className="text-sm font-black text-mysha-blue/20"
+                                className="text-xs sm:text-sm font-black text-mysha-blue/20"
                                 animate={{
                                   rotate: [0, 360]
                                 }}
@@ -491,10 +490,10 @@ export default function ServicesPage() {
                                 0{index + 1}
                               </motion.span>
                             </div>
-                            <p className="text-gray-600 mb-4 leading-relaxed">
+                            <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
                               {service.description}
                             </p>
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-1 sm:gap-2">
                               {service.details.map((detail, detailIndex) => (
                                 <motion.span
                                   key={detail}

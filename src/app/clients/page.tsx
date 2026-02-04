@@ -49,15 +49,15 @@ export default function ClientsPage() {
 
   useEffect(() => {
     setIsLoaded(true);
-    // Generate 3D particles
-    setParticles([...Array(30)].map((_, i) => ({
+    // Generate fewer 3D particles for better performance
+    setParticles([...Array(15)].map((_, i) => ({
       id: i,
       x: Math.random() * 100 - 50,
       y: Math.random() * 100 - 50,
       z: Math.random() * 100 - 50,
-      size: Math.random() * 3 + 1,
-      opacity: Math.random() * 0.6 + 0.2,
-      duration: Math.random() * 15 + 10,
+      size: Math.random() * 2 + 1,
+      opacity: Math.random() * 0.4 + 0.1,
+      duration: Math.random() * 20 + 15,
       delay: Math.random() * 10
     })));
 
@@ -197,7 +197,7 @@ export default function ClientsPage() {
               className="mb-8"
             >
               <ScrollReveal>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white leading-[0.9] tracking-tight uppercase">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-black text-white leading-[0.9] tracking-tight uppercase">
                   <div className="relative" style={{ transformStyle: 'preserve-3d' }}>
                     <motion.div
                       initial={{ rotateX: -90, opacity: 0 }}
@@ -224,7 +224,7 @@ export default function ClientsPage() {
                 initial={{ opacity: 0, y: 30, rotateX: -45 }}
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="text-white/60 text-xl md:text-2xl max-w-3xl font-light leading-relaxed mb-16"
+                className="text-white/60 text-lg sm:text-xl md:text-2xl max-w-3xl font-light leading-relaxed mb-16 px-4"
               >
                 Partnering with the most prestigious companies across the UAE and GCC region for over a decade
               </motion.p>
@@ -235,7 +235,7 @@ export default function ClientsPage() {
               initial={{ opacity: 0, rotateX: -45 }}
               animate={{ opacity: 1, rotateX: 0 }}
               transition={{ duration: 1, delay: 1.2 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
               style={{ transformStyle: 'preserve-3d' }}
             >
               {stats.map((stat, index) => (
@@ -253,7 +253,7 @@ export default function ClientsPage() {
                       z: hoveredClient === stat.label ? 50 : 0
                     }}
                     transition={{ duration: 0.3, type: "spring" }}
-                    className="relative p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 text-center"
+                    className="relative p-4 sm:p-6 lg:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 text-center"
                   >
                     <div className="relative z-10">
                       <motion.div
@@ -262,20 +262,20 @@ export default function ClientsPage() {
                           scale: hoveredClient === stat.label ? 1.2 : 1
                         }}
                         transition={{ duration: 0.6 }}
-                        className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-white/20 to-white/10 flex items-center justify-center"
+                        className="w-12 h-12 sm:w-14 sm:h-16 lg:w-16 lg:h-16 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-r from-white/20 to-white/10 flex items-center justify-center"
                       >
-                        <stat.icon className="w-8 h-8 text-white" />
+                        <stat.icon className="w-6 h-6 sm:w-7 sm:h-8 lg:w-8 lg:h-8 text-white" />
                       </motion.div>
                       <motion.div
                         animate={{ 
                           scale: hoveredClient === stat.label ? 1.1 : 1,
                           textShadow: hoveredClient === stat.label ? "0 0 20px rgba(255,255,255,0.5)" : "none"
                         }}
-                        className="text-4xl md:text-5xl font-black text-white mb-2"
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2"
                       >
                         {stat.value}
                       </motion.div>
-                      <div className="text-sm text-white/60 uppercase tracking-wider">{stat.label}</div>
+                      <div className="text-xs sm:text-sm text-white/60 uppercase tracking-wider">{stat.label}</div>
                     </div>
                     
                     {/* 3D Glow Effect */}

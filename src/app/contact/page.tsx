@@ -89,15 +89,15 @@ export default function ContactPage() {
 
   useEffect(() => {
     setIsLoaded(true);
-    // Generate 3D particles
-    setParticles([...Array(30)].map((_, i) => ({
+    // Generate fewer 3D particles for better performance
+    setParticles([...Array(15)].map((_, i) => ({
       id: i,
       x: Math.random() * 100 - 50,
       y: Math.random() * 100 - 50,
       z: Math.random() * 100 - 50,
-      size: Math.random() * 3 + 1,
-      opacity: Math.random() * 0.6 + 0.2,
-      duration: Math.random() * 15 + 10,
+      size: Math.random() * 2 + 1,
+      opacity: Math.random() * 0.4 + 0.1,
+      duration: Math.random() * 20 + 15,
       delay: Math.random() * 10
     })));
 

@@ -36,10 +36,10 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
             transition={{ duration: 0.1, delay: 0.1 }}
             className="flex flex-col items-center"
           >
-            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-4">
-              <img src="/GALLERY/dsd-removebg-preview.png" alt="MYSHA Logo" className="w-10 h-10 object-contain" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <img src="/GALLERY/dsd-removebg-preview.png" alt="MYSHA Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
             </div>
-            <span className="text-white font-display text-2xl font-black tracking-tighter">MYSHA</span>
+            <span className="text-white font-display text-xl sm:text-2xl font-black tracking-tighter">MYSHA</span>
           </motion.div>
         </motion.div>
         
@@ -56,10 +56,10 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
             transition={{ duration: 0.4 }}
             className="flex flex-col items-center"
           >
-            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-4">
-              <img src="/GALLERY/dsd-removebg-preview.png" alt="MYSHA Logo" className="w-10 h-10 object-contain" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <img src="/GALLERY/dsd-removebg-preview.png" alt="MYSHA Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
             </div>
-            <span className="text-white font-display text-2xl font-black tracking-tighter">MYSHA</span>
+            <span className="text-white font-display text-xl sm:text-2xl font-black tracking-tighter">MYSHA</span>
           </motion.div>
         </motion.div>
 

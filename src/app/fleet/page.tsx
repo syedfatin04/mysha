@@ -201,15 +201,15 @@ export default function FleetPage() {
                             <motion.div
                               whileHover={{ rotate: 360, scale: 1.12 }}
                               transition={{ duration: 0.6 }}
-                              className="w-12 h-12 mx-auto mb-4 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center"
+                              className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center"
                             >
-                              <stat.icon className="w-6 h-6 text-white" />
+                              <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </motion.div>
                             <motion.div
                               initial={{ opacity: 0, scale: 0.5 }}
                               whileInView={{ opacity: 1, scale: 1 }}
                               transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
-                              className="text-2xl md:text-3xl font-black text-white mb-2"
+                              className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-2"
                             >
                               {stat.value}
                             </motion.div>
@@ -229,13 +229,13 @@ export default function FleetPage() {
                 </div>
               </div>
               
-              {/* 3D Truck Model */}
-              <div className="flex-1 lg:flex-none lg:w-3/4 ml-auto lg:ml-16">
+              {/* 3D Truck Model - Hidden on Mobile */}
+              <div className="hidden lg:block flex-1 lg:flex-none lg:w-3/4 ml-auto lg:ml-16">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 0.3 }}
-                  className="w-full h-[600px] lg:h-[700px]"
+                  className="w-full h-[700px]"
                 >
                   <Truck3DScene />
                 </motion.div>

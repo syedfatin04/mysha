@@ -31,15 +31,15 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground pt-32 pb-12 overflow-hidden relative isolate">
       {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/[0.01] rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-[80vw] max-w-[500px] h-[80vw] max-h-[500px] bg-white/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[80vw] max-w-[300px] h-[80vw] max-h-[300px] bg-white/[0.01] rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
       <div className="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-black/20 -z-10" />
       <motion.div
         aria-hidden
         initial={{ opacity: 0.25, y: 0 }}
         animate={{ opacity: [0.18, 0.28, 0.18], y: [0, -18, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-24 left-1/2 h-64 w-[900px] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/15 to-transparent blur-3xl -z-10"
+        className="absolute -top-24 left-1/2 h-64 w-[90vw] max-w-[900px] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/15 to-transparent blur-3xl -z-10"
       />
 
       <motion.div 

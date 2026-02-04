@@ -45,7 +45,7 @@ export function Navbar() {
         }`}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent" />
-        <div className="absolute -top-24 left-1/2 h-48 w-[900px] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl" />
+        <div className="absolute -top-24 left-1/2 h-48 w-[90vw] max-w-[900px] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl" />
         <div className="absolute -top-20 right-0 h-56 w-56 bg-white/10 blur-3xl" />
       </div>
 

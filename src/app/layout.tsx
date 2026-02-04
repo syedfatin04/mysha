@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { VisualEditsMessenger } from "orchids-visual-edits";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/motion/PageTransition";
 import { WhatsAppWidget } from "@/components/ui/WhatsAppWidget";
+import { VisualEditsWrapper } from "@/components/layout/VisualEditsWrapper";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} antialiased selection:bg-primary selection:text-primary-foreground`}
+        className={`${inter.variable} ${plusJakartaSans.variable} antialiased selection:bg-primary selection:text-primary-foreground overflow-x-hidden`}
       >
           <Navbar />
           <main>
@@ -46,7 +46,7 @@ export default function RootLayout({
           </main>
           <WhatsAppWidget />
           <Footer />
-        <VisualEditsMessenger />
+        <VisualEditsWrapper />
       </body>
     </html>
   );
