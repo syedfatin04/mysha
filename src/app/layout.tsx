@@ -19,7 +19,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "MYSHA TRANSPORT | Premium Logistics & Transportation UAE & GCC",
-  description: "Reliable Transportation & Logistics Solutions Across the UAE & GCC. Delivering safe, efficient, and technology-driven transportation services since 2014.",
+  description: "Reliable Transportation & Logistics Solutions Across the UAE & GCC. Delivering safe, efficient, and technology-driven transportation services since 2023.",
+  icons: {
+    icon: "/GALLERY/favicon_io (2)/favicon.ico",
+    shortcut: "/GALLERY/favicon_io (2)/favicon.ico",
+    apple: "/GALLERY/favicon_io (2)/apple-touch-icon.png",
+  },
+  manifest: "/GALLERY/favicon_io (2)/manifest.json",
 };
 
 export default function RootLayout({

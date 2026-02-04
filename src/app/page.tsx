@@ -1,6 +1,5 @@
 import { Hero } from "@/components/home/Hero";
 import { AboutPreview } from "@/components/home/AboutPreview";
-import { Stats } from "@/components/home/Stats";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { ServiceCoverage } from "@/components/home/ServiceCoverage";
 import { ClientsPreview } from "@/components/home/ClientsPreview";
@@ -12,7 +11,6 @@ export default function Home() {
     <div className="flex flex-col">
       <Hero />
       <AboutPreview />
-      <Stats />
       <WhyChooseUs />
       <ServiceCoverage />
       <ClientsPreview />

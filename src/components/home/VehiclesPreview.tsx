@@ -1,11 +1,61 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import Image from "next/image";
+function VideoCard() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [hasPlayed, setHasPlayed] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasPlayed) {
+            setIsVisible(true);
+            if (videoRef.current) {
+              videoRef.current.play();
+              setHasPlayed(true);
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [hasPlayed]);
+
+  return (
+    <div ref={cardRef} className="w-full h-full">
+      <video
+        ref={videoRef}
+        src="/VEHICLES/kling_20260204_VIDEO_Ultra_clea_1902_0.mp4"
+        muted
+        playsInline
+        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+        style={{ objectPosition: 'center' }}
+        onEnded={() => {
+          // Video ends and stays at last frame
+        }}
+      />
+    </div>
+  );
+}
 
 export function VehiclesPreview() {
   return (
@@ -43,19 +93,19 @@ export function VehiclesPreview() {
               name: "Heavy Transport", 
               desc: "Engineered for oversized industrial loads up to 80 tons.", 
               type: "Low Bed",
-              image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=2070"
+              image: "/VEHICLES/pngwing_edited.avif" 
             },
             { 
               name: "Box Trailers", 
               desc: "Premium secure transport for high-value logistics.", 
               type: "Hi-Tech / 50ft",
-              image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2070"
+              image: "/VEHICLES/volvo truck_edited.avif"
             },
             { 
               name: "Flat Bed Units", 
               desc: "Versatile fleet for construction and industrial requirements.", 
               type: "40 - 60 Feet",
-              image: "https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&q=80&w=2070"
+              image: "/VEHICLES/flatbed.avif"
             },
           ].map((item, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
@@ -90,6 +140,32 @@ export function VehiclesPreview() {
               </motion.div>
             </ScrollReveal>
           ))}
+        </div>
+
+        <div className="mt-12">
+          <ScrollReveal delay={0.15}>
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="group relative h-[420px] rounded-[2.5rem] overflow-hidden shadow-2xl"
+            >
+              <VideoCard />
+              <div className="absolute inset-0 bg-gradient-to-r from-mysha-blue/95 via-mysha-blue/45 to-transparent" />
+
+              <div className="absolute inset-0 p-10 md:p-14 flex flex-col justify-end">
+                <div className="max-w-xl">
+                  <div className="text-[10px] font-black uppercase tracking-[0.25em] text-white/70">
+                    24/7 Operations
+                  </div>
+                  <div className="mt-3 text-3xl md:text-5xl font-display font-black text-white tracking-tight">
+                    Trucking at night
+                  </div>
+                  <div className="mt-3 text-white/70 text-base md:text-lg leading-relaxed">
+                    Night-ready dispatch, tracking, and compliance workflows designed for uninterrupted GCC coverage.
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

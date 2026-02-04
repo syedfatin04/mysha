@@ -11,7 +11,7 @@ interface ScrollRevealProps {
 
 export function ScrollReveal({ 
   children, 
-  width = "fit-content", 
+  width = "100%", 
   delay = 0,
   direction = "up"
 }: ScrollRevealProps) {

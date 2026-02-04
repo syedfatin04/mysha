@@ -20,6 +20,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const isHeroBlendRoute = true; // Always blend into hero on all pages
+  const heroTop = isHeroBlendRoute && !scrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,21 +33,32 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 relative isolate ${
         scrolled 
-          ? "bg-primary/95 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl" 
-          : "bg-transparent py-6"
+          ? "bg-primary backdrop-blur-2xl border-b border-white/10 py-3 shadow-[0_20px_80px_rgba(0,0,0,0.35)]" 
+          : "bg-primary border-b border-white/10 py-6"
       }`}
     >
+      <div
+        className={`absolute inset-0 -z-10 transition-opacity duration-500 ${
+          scrolled ? "opacity-100" : "opacity-70"
+        }`}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent" />
+        <div className="absolute -top-24 left-1/2 h-48 w-[900px] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl" />
+        <div className="absolute -top-20 right-0 h-56 w-56 bg-white/10 blur-3xl" />
+      </div>
+
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Magnetic>
           <Link href="/" className="flex items-center space-x-3 group">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white p-2 rounded-xl shadow-lg"
+              className="relative p-2 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-xl shadow-[0_18px_45px_rgba(0,0,0,0.25)]"
             >
-              <Truck className="w-6 h-6 text-primary" />
+              <div className="absolute -inset-3 bg-gradient-to-r from-white/0 via-white/25 to-white/0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity" />
+              <img src="/GALLERY/dsd-removebg-preview.png" alt="MYSHA Logo" className="w-6 h-6 object-contain" />
             </motion.div>
             <div className="flex flex-col">
               <span className="font-display text-2xl font-black tracking-tighter leading-none text-white">
@@ -82,17 +95,15 @@ export function Navbar() {
               )}
             </Link>
           ))}
-            <Magnetic>
-              <Link
-                href="/contact"
-                className="relative group overflow-hidden bg-white text-primary px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all"
-              >
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Get a Quote</span>
-                <motion.div 
-                  className="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
-                />
-              </Link>
-            </Magnetic>
+            <Link
+              href="/contact"
+              className="relative group overflow-hidden bg-white/10 text-white border border-white/15 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all"
+            >
+              <span className="relative z-10 transition-colors duration-300">Get a Quote</span>
+              <motion.div
+                className="absolute inset-0 bg-white/15 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
+              />
+            </Link>
         </div>
 
         {/* Mobile Toggle */}

@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 const stats = [
   { label: "Trusted Corporate Clients", value: 30, suffix: "+" },
   { label: "Trucks & Trailers", value: 105, suffix: "+" },
-  { label: "Years of Experience", value: 9, suffix: "+" },
+  { label: "Years of Experience", value: 3, suffix: "+" },
   { label: "Operating GCC Countries", value: 5, suffix: "" },
 ];
 
