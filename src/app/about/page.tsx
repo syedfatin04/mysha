@@ -6,18 +6,6 @@ import { TextReveal } from "@/components/motion/TextReveal";
 import { CheckCircle2, Building2, Globe, Award, Clock, Zap } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About MYSHA Transport | Leading Logistics Company Dubai UAE",
-  description: "Learn about MYSHA Transport LLC - Dubai's premier transportation company since 2023. Serving UAE & GCC with 105+ trucks, cross-border logistics, and heavy cargo expertise.",
-  keywords: "about MYSHA Transport, Dubai logistics company, UAE transportation, GCC freight services, heavy cargo transport, cross-border logistics",
-  openGraph: {
-    title: "About MYSHA Transport | Leading Logistics Company Dubai UAE",
-    description: "Learn about MYSHA Transport LLC - Dubai's premier transportation company since 2023. Serving UAE & GCC with 105+ trucks.",
-    url: "https://mysha-transport.vercel.app/about",
-  },
-};
 
 const stats = [
   { icon: Building2, value: "2023", label: "Founded", color: "from-blue-500 to-purple-600" },

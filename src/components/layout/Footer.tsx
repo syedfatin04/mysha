@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Truck, Mail, Phone, MapPin, Instagram, MessageSquare } from "lucide-react";
+import { Truck, Mail, Phone, MapPin, MessageSquare } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import { Magnetic } from "@/components/motion/Magnetic";
 
@@ -70,7 +70,6 @@ export function Footer() {
             </p>
             <div className="flex space-x-5 pt-2">
               {[
-                { icon: Instagram, href: "https://www.instagram.com/saqralnajahtransport/" },
                 { icon: MessageSquare, href: "https://wa.me/971557796387" }
               ].map((social, i) => (
                 <Magnetic key={i}>

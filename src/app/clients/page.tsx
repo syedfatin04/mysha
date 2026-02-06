@@ -7,18 +7,6 @@ import { Building2, Globe, Award, Clock, Zap, Star, Sparkles } from "lucide-reac
 import Image from "next/image";
 import { useState, useEffect, useRef, useMemo } from "react";
 import { clientData } from "@/lib/clients";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Our Clients | MYSHA Transport Dubai UAE",
-  description: "Discover 25+ trusted clients served by MYSHA Transport across UAE and GCC. Leading logistics partner for steel, engineering, construction, and manufacturing industries.",
-  keywords: "MYSHA Transport clients, Dubai logistics customers, UAE transportation partners, GCC freight clients, industrial transport services",
-  openGraph: {
-    title: "Our Clients | MYSHA Transport Dubai UAE",
-    description: "Discover 25+ trusted clients served by MYSHA Transport across UAE and GCC. Leading logistics partner for industries.",
-    url: "https://mysha-transport.vercel.app/clients",
-  },
-};
 
 const stats = [
   { icon: Building2, value: "25+", label: "Industries", color: "from-blue-500 to-purple-600" },

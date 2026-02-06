@@ -10,35 +10,18 @@ import { useMemo, useRef, useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Truck Fleet | MYSHA Transport Dubai UAE",
-  description: "Modern fleet of 105+ trucks and vehicles at MYSHA Transport. Heavy cargo transport, cross-border logistics, and specialized transportation equipment across UAE and GCC.",
-  keywords: "truck fleet Dubai, transportation vehicles UAE, heavy cargo trucks, cross-border transport, logistics fleet, MYSHA Transport vehicles",
-  openGraph: {
-    title: "Truck Fleet | MYSHA Transport Dubai UAE",
-    description: "Modern fleet of 105+ trucks and vehicles at MYSHA Transport. Heavy cargo transport and specialized transportation equipment.",
-    url: "https://mysha-transport.vercel.app/fleet",
-  },
-};
 
 // Gallery carousel state and functions
 const galleryImages = [
   "/GALLERY/813448_6a4e69bad9f241c7af3694e26e1892d2~mv2.avif",
   "/GALLERY/813448_4e2c6298014c498eb185b57f6dca352c~mv2.avif",
   "/GALLERY/813448_9515cb05edab4762baa7fc924787ca19~mv2.avif",
-  "/GALLERY/813448_63844c9fcb2a48ab8f9b8159a5fee16c~mv2.avif",
   "/GALLERY/813448_a813e31eafeb4225982f24529fc54e71~mv2.avif",
   "/GALLERY/813448_d8b05ff851a543578be058415e662948~mv2.avif",
   "/GALLERY/813448_d9efb42c32fe482e8ca96b4150005c99~mv2.avif",
   "/GALLERY/277368316_510800913911784_2323857707811215500_n.jpg",
   "/GALLERY/277364588_1009030550031791_7091969809755119361_n.jpg",
-  "/GALLERY/277393948_1143349662872368_6159340115907031385_n.jpg",
-  "/GALLERY/277454231_640295893727545_7101566994651130122_n.jpg",
-  "/GALLERY/277472581_375412774501646_950259269031912639_n.jpg",
-  "/GALLERY/277480422_679171523327892_1551591217471729743_n.jpg",
-  "/GALLERY/277602852_158714929867199_1209590829297484966_n.jpg"
+  "/GALLERY/277393948_1143349662872368_6159340115907031385_n.jpg"
 ];
 
 function useGalleryCarousel() {
