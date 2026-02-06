@@ -99,7 +99,7 @@ export function Navbar() {
               href="/contact"
               className="relative group overflow-hidden bg-white/10 text-white border border-white/15 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all"
             >
-              <span className="relative z-10 transition-colors duration-300">Get a Quote</span>
+              <span className="relative z-10 transition-colors duration-300">Request Quote</span>
               <motion.div
                 className="absolute inset-0 bg-white/15 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
               />
@@ -148,7 +148,7 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="w-full text-center bg-white text-primary py-4 rounded-xl font-black uppercase tracking-widest"
               >
-                Get a Quote
+                Contact Us
               </Link>
             </div>
           </motion.div>

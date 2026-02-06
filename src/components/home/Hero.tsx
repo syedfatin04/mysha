@@ -344,24 +344,33 @@ export function Hero() {
 
       {/* SEO Content - Hidden but accessible to search engines */}
       <div className="sr-only">
-        <h2>MYSHA Transport - Leading Transportation Company in Dubai, UAE</h2>
+        <h2>MYSHA Transport - Reliable Transport Solutions Across UAE & GCC</h2>
         <p>
-          MYSHA Transport LLC is a premier transportation and logistics company based in Dubai, UAE, 
-          providing reliable freight services across the GCC region since 2023. Our fleet of 105+ trucks 
-          delivers exceptional cargo transport solutions throughout Dubai, Abu Dhabi, Sharjah, and all GCC countries.
+          MYSHA Transport LLC provides reliable transport solutions across UAE and GCC region. 
+          As a premier transportation company in Dubai, we offer comprehensive logistics services 
+          with our fleet of 105+ trucks delivering exceptional cargo transport solutions throughout 
+          Dubai, Abu Dhabi, Sharjah, and all GCC countries.
         </p>
-        <h3>Professional Transportation Services</h3>
+        <h3>Reliable Transportation Services</h3>
         <p>
-          Specializing in cross-border transport, heavy cargo logistics, and comprehensive freight solutions, 
-          MYSHA Transport ensures safe and timely delivery of goods across United Arab Emirates, Saudi Arabia, 
-          Oman, Qatar, Kuwait, and Bahrain. Our experienced team handles all types of cargo with modern equipment.
+          Our reliable transport solutions include cross-border transport, heavy cargo logistics, 
+          and comprehensive freight services. MYSHA Transport ensures safe and timely delivery 
+          of goods across United Arab Emirates, Saudi Arabia, Oman, Qatar, Kuwait, and Bahrain. 
+          Our experienced team handles all types of cargo with modern equipment.
+        </p>
+        <h3>Transport Solutions Across GCC</h3>
+        <p>
+          As a trusted logistics partner in Dubai, we offer competitive transport solutions 
+          with 24/7 customer support and proven track record in GCC freight services. 
+          Our modern fleet and experienced drivers make us the preferred choice for businesses 
+          seeking reliable transport solutions in the UAE and across the Gulf region.
         </p>
         <h3>Why Choose MYSHA Transport?</h3>
         <p>
-          As a trusted logistics partner in Dubai, we offer competitive transportation rates, 
-          24/7 customer support, and proven track record in GCC freight services. 
-          Our modern fleet and experienced drivers make us the preferred choice for businesses 
-          seeking reliable transport solutions in the UAE and across the Gulf region.
+          MYSHA Transport stands out with reliable transport solutions, competitive rates, 
+          and exceptional service quality. Our transport solutions cover all GCC countries 
+          with specialized heavy cargo handling, cross-border logistics, and comprehensive 
+          freight management services tailored to your business needs.
         </p>
       </div>
 
