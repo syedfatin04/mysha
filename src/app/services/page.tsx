@@ -16,6 +16,18 @@ import {
   Shield
 } from "lucide-react";
 import RotatingEarth from "@/components/ui/wireframe-dotted-globe";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Transportation Services | MYSHA Transport Dubai UAE",
+  description: "Comprehensive transportation services by MYSHA Transport: cross-border logistics, heavy cargo transport, freight services across UAE and GCC. Reliable solutions since 2023.",
+  keywords: "transportation services Dubai, logistics UAE, cross-border freight, heavy cargo transport, shipping services, fleet management, GCC logistics",
+  openGraph: {
+    title: "Transportation Services | MYSHA Transport Dubai UAE",
+    description: "Comprehensive transportation services by MYSHA Transport: cross-border logistics, heavy cargo transport across UAE and GCC.",
+    url: "https://mysha-transport.vercel.app/services",
+  },
+};
 
 interface Particle3D {
   id: number;

@@ -6,6 +6,18 @@ import { TextReveal } from "@/components/motion/TextReveal";
 import { CheckCircle2, Building2, Globe, Award, Clock, Zap } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About MYSHA Transport | Leading Logistics Company Dubai UAE",
+  description: "Learn about MYSHA Transport LLC - Dubai's premier transportation company since 2023. Serving UAE & GCC with 105+ trucks, cross-border logistics, and heavy cargo expertise.",
+  keywords: "about MYSHA Transport, Dubai logistics company, UAE transportation, GCC freight services, heavy cargo transport, cross-border logistics",
+  openGraph: {
+    title: "About MYSHA Transport | Leading Logistics Company Dubai UAE",
+    description: "Learn about MYSHA Transport LLC - Dubai's premier transportation company since 2023. Serving UAE & GCC with 105+ trucks.",
+    url: "https://mysha-transport.vercel.app/about",
+  },
+};
 
 const stats = [
   { icon: Building2, value: "2023", label: "Founded", color: "from-blue-500 to-purple-600" },
@@ -473,6 +485,34 @@ export default function AboutPage() {
         {/* Cinematic Bottom Shadow */}
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-mysha-blue to-transparent z-10" />
       </section>
+
+      {/* SEO Content - Hidden but accessible to search engines */}
+      <div className="sr-only">
+        <h2>MYSHA Transport Company Profile - Dubai Logistics Leader</h2>
+        <p>
+          MYSHA Transport LLC is a premier transportation and logistics company headquartered in Dubai, UAE. 
+          Since our founding in 2023, we have established ourselves as a trusted partner for businesses 
+          seeking reliable freight services across the Gulf Cooperation Council (GCC) region.
+        </p>
+        <h3>Our Transportation Expertise</h3>
+        <p>
+          Specializing in cross-border transport, heavy cargo logistics, and comprehensive freight solutions, 
+          MYSHA Transport operates a modern fleet of 105+ vehicles. Our transportation services cover 
+          Dubai, Abu Dhabi, Sharjah, and extend throughout Saudi Arabia, Oman, Qatar, Kuwait, and Bahrain.
+        </p>
+        <h3>Logistics Capabilities</h3>
+        <p>
+          Our logistics expertise includes heavy cargo transport, cross-border freight management, and 
+          specialized shipping solutions. With 30+ satisfied clients across 7 countries, we deliver 
+          exceptional transportation services tailored to diverse industry needs.
+        </p>
+        <h3>Commitment to Excellence</h3>
+        <p>
+          At MYSHA Transport, we combine cutting-edge technology with experienced professionals to 
+          provide seamless logistics solutions. Our commitment to safety, reliability, and customer satisfaction 
+          makes us the preferred transportation partner in the UAE and across the GCC region.
+        </p>
+      </div>
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">

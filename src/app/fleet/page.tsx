@@ -10,6 +10,18 @@ import { useMemo, useRef, useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Truck Fleet | MYSHA Transport Dubai UAE",
+  description: "Modern fleet of 105+ trucks and vehicles at MYSHA Transport. Heavy cargo transport, cross-border logistics, and specialized transportation equipment across UAE and GCC.",
+  keywords: "truck fleet Dubai, transportation vehicles UAE, heavy cargo trucks, cross-border transport, logistics fleet, MYSHA Transport vehicles",
+  openGraph: {
+    title: "Truck Fleet | MYSHA Transport Dubai UAE",
+    description: "Modern fleet of 105+ trucks and vehicles at MYSHA Transport. Heavy cargo transport and specialized transportation equipment.",
+    url: "https://mysha-transport.vercel.app/fleet",
+  },
+};
 
 // Gallery carousel state and functions
 const galleryImages = [

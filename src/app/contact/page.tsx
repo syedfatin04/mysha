@@ -3,8 +3,21 @@
 import { motion, useScroll, useTransform, useSpring, useMotionValue, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { TextReveal } from "@/components/motion/TextReveal";
-import { Phone, Mail, MapPin, Clock, Send, MessageSquare, Building2, Globe, Award, Zap, CheckCircle } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Star, Shield, Truck, Globe, Award, Zap, MessageSquare } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact MYSHA Transport | Dubai Logistics Company UAE",
+  description: "Contact MYSHA Transport LLC for reliable transportation services in Dubai, UAE. Get quotes for cross-border logistics, heavy cargo transport, and freight services across GCC.",
+  keywords: "contact MYSHA Transport, Dubai logistics contact, UAE transportation phone, freight services quote, cross-border transport contact, heavy cargo transport Dubai",
+  openGraph: {
+    title: "Contact MYSHA Transport | Dubai Logistics Company UAE",
+    description: "Contact MYSHA Transport LLC for reliable transportation services in Dubai, UAE. Get quotes for logistics services.",
+    url: "https://mysha-transport.vercel.app/contact",
+  },
+};
+
 import emailjs from "@emailjs/browser";
 
 const stats = [
