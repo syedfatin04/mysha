@@ -342,6 +342,29 @@ export function Hero() {
     >
       {animatedBackground}
 
+      {/* SEO Content - Hidden but accessible to search engines */}
+      <div className="sr-only">
+        <h2>MYSHA Transport - Leading Transportation Company in Dubai, UAE</h2>
+        <p>
+          MYSHA Transport LLC is a premier transportation and logistics company based in Dubai, UAE, 
+          providing reliable freight services across the GCC region since 2023. Our fleet of 105+ trucks 
+          delivers exceptional cargo transport solutions throughout Dubai, Abu Dhabi, Sharjah, and all GCC countries.
+        </p>
+        <h3>Professional Transportation Services</h3>
+        <p>
+          Specializing in cross-border transport, heavy cargo logistics, and comprehensive freight solutions, 
+          MYSHA Transport ensures safe and timely delivery of goods across United Arab Emirates, Saudi Arabia, 
+          Oman, Qatar, Kuwait, and Bahrain. Our experienced team handles all types of cargo with modern equipment.
+        </p>
+        <h3>Why Choose MYSHA Transport?</h3>
+        <p>
+          As a trusted logistics partner in Dubai, we offer competitive transportation rates, 
+          24/7 customer support, and proven track record in GCC freight services. 
+          Our modern fleet and experienced drivers make us the preferred choice for businesses 
+          seeking reliable transport solutions in the UAE and across the Gulf region.
+        </p>
+      </div>
+
       {/* Enhanced 3D Background Elements */}
       <motion.div 
         style={{ y: y1, opacity, rotateX: rotation3D }}
